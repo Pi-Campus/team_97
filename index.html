@@ -13,6 +13,9 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
     <title>Hello, world!</title>
   </head>
   <body>
@@ -58,18 +61,55 @@
                     <div class="CardInner">
                     <label>Search for covid info</label>
                     <div class="d-flex">
-                      <button class="Icon">
+                      <button class="Icon" id="btn_search">
                         <i class="fas fa-search fa-2x"></i>
                       </button>
                       <div class="InputContainer">
-                        <input placeholder="type new positives italy ..."/>
+                        <input id ="input_search" placeholder="type new positives italy ..."/>
                       </div>
                     </div>
                    </div>
                   </div>
             </div>
+            <div class="col-12">
+              
+            </div>
         </div>
     </div>
+
+    <script>
+
+
+
+      document.querySelector('#btn_search').addEventListener('click', function(){
+        getData()
+      })
+      function getData(){
+        console.log(document.getElementById('input_search').value);
+
+
+
+        axios({
+            headers : {
+              authorization: 'Bearer 8cca1667-8c6c-4951-abb3-457a92ac86dc',
+              'Content-Type': 'application/json'
+            },
+
+            method: 'post',
+            url: 'https://api.askdata.com/smartinsight/data/nl/result',
+            data: {
+              nl: document.getElementById('input_search').value,
+              language : "en",
+            }
+          }).then( resp => {
+            console.log(resp.data);
+          }).catch( err => {
+
+        });
+      }
+
+
+    </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
