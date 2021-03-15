@@ -71,7 +71,7 @@
                    </div>
                   </div>
             </div>
-            <div class="col-12" id='data_visual'>
+            <div class="col-12 text-black" id='data_visual'>
               
             </div>
         </div>
@@ -106,9 +106,9 @@
             
             let wrapper = document.getElementById('data_visual')
 
-            let p = document.createElement(p)
+            let p = document.createElement('p')
 
-            p.innerHTML = `${resp.data}`
+            p.innerText = `${ JSON.stringify(resp.data.data)}`
 
             wrapper.appendChild(p)
 
