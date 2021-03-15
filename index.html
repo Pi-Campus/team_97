@@ -71,7 +71,7 @@
                    </div>
                   </div>
             </div>
-            <div class="col-12">
+            <div class="col-12" id='data_visual'>
               
             </div>
         </div>
@@ -102,7 +102,16 @@
               language : "en",
             }
           }).then( resp => {
-            console.log(resp.data);
+            console.log(resp);
+            
+            let wrapper = document.getElementById('data_visual')
+
+            let p = document.createElement(p)
+
+            p.innerHTML = `${resp.data}`
+
+            wrapper.appendChild(p)
+
           }).catch( err => {
 
         });
