@@ -1,0 +1,22 @@
+{
+  "name": "team_97",
+  "version": "1.0.0",
+  "description": "Please find rules of the competition in [RULES.md](../main/RULES.md) and APIs quick tutorial and examples in [API.md](../main/API.md).",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pi-Campus/team_97.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pi-Campus/team_97/issues"
+  },
+  "homepage": "https://github.com/Pi-Campus/team_97#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
